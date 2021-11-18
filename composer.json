@@ -4,7 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Admin\\LaravelMercadoLivre\\": "packages/daygarcia/laravel-mercado-livre/src/"
+            "DayGarcia\\LaravelMercadoLivre\\": "packages/daygarcia/laravel-mercado-livre/src/"
         }
     },
     "authors": [
