@@ -1,7 +1,7 @@
 <?php
 
 
-namespace DayGarcia\MercadoLivre;
+namespace DayGarcia\LaravelMercadoLivre;
 
 interface Contracts
 {

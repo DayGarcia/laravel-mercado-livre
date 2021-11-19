@@ -9,9 +9,8 @@
 
 namespace DayGarcia\LaravelMercadoLivre;
 
-use DayGarcia\MercadoLivre\Contracts;
+use DayGarcia\LaravelMercadoLivre\Contracts;
 use Illuminate\Support\Facades\Http;
-
 
 
 class MercadoLivre implements Contracts
