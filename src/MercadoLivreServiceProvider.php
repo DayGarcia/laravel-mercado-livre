@@ -1,6 +1,6 @@
 <?php
 
-namespace DayGarcia\MercadoLivre;
+namespace DayGarcia\LaravelMercadoLivre;
 
 use Illuminate\Support\ServiceProvider;
 use DayGarcia\LaravelMercadoLivre\MercadoLivre;
