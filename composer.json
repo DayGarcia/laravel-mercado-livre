@@ -1,5 +1,5 @@
 {
-    "name": "admin/laravel-mercado-livre",
+    "name": "daygarcia/laravel-mercado-livre",
     "description": "A laravel package to help you to connect to Mercado Livre API",
     "license": "MIT",
     "autoload": {
