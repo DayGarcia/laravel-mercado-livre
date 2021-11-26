@@ -26,9 +26,9 @@ class MercadoLivre implements Contracts
     private const URL = 'https://api.mercadolibre.com/';
     private const REDIRECT = 'common/mercadolivre';
 
-    public static function get(array $params)
+    public static function get(array $config)
     {
-        $response = Http::withHeaders("Authorization: Bearer {$params['token']}")->get($params['route'])->object();
+        $response = Http::withHeaders("Authorization: Bearer {$config['token']}")->get($config['route'])->object();
         if (isset($response['invoice_number'])) {
             if (isset($response['errors'])) {
                 return array(
@@ -42,14 +42,14 @@ class MercadoLivre implements Contracts
         }
     }
 
-    public static function getPDF(array $params)
+    public static function getPDF(array $config)
     {
-        return Http::withHeaders("Authorization: Bearer {$params['token']}")->get($params['route'])->object();
+        return Http::withHeaders("Authorization: Bearer {$config['token']}")->get($config['route'])->object();
     }
 
-    public static function add(array $params)
+    public static function add(array $config)
     {
-        $response = Http::withHeaders("Authorization: Bearer {$params['token']}")->post($params['route'], $params['data'])->object();
+        $response = Http::withHeaders("Authorization: Bearer {$config['token']}")->post($config['route'], $config['data'])->object();
 
         if ($response) {
             if (isset($response['errors'])) {
@@ -64,9 +64,9 @@ class MercadoLivre implements Contracts
         }
     }
 
-    public static function update(array $params)
+    public static function update(array $config)
     {
-        $response = Http::withHeaders("Authorization: Bearer {$params['token']}")->post($params['route'], $params['data'])->object();
+        $response = Http::withHeaders("Authorization: Bearer {$config['token']}")->post($config['route'], $config['data'])->object();
 
         if ($response) {
             if (isset($response['errors'])) {
