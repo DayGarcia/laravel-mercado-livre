@@ -16,6 +16,7 @@ class Configuration
     private $refresh_token;
     private $type;
     private $redirect_uri;
+    private $user_id;
     private $errors = [];
 
     public function __construct(String $code, String $client_id, String $secret, String $redirect_uri, String $type, String $refresh_token = null)
