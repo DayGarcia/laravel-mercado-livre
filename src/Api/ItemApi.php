@@ -35,4 +35,20 @@ class ItemApi extends Api
 
         return $response->json();
     }
+
+    public function getItemShippingOptions(String $itemId)
+    {
+        $url = "items/${itemId}/shipping_options";
+        $response = $this->get($this->configuration->getAccessToken(), $url);
+
+        return $response->json();
+    }
+
+    public function createItem(array $item)
+    {
+        $url = 'items';
+        $response = $this->post($this->configuration->getAccessToken(), $url, $item);
+
+        return $response->json();
+    }
 }

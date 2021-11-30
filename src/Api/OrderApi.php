@@ -43,4 +43,12 @@ class OrderApi extends Api
 
         return $response->json();
     }
+
+    public function getOrderShipments(string $order_id)
+    {
+        $url = "orders/${order_id}/shipments";
+        $response = $this->get($this->configuration->getAccessToken(), $url);
+
+        return $response->json();
+    }
 }
