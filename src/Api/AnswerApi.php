@@ -15,8 +15,6 @@ class AnswerApi extends Api
     public function createAnswer(array $data)
     {
         $url = 'answers';
-        $response = $this->post($this->configuration->getAccessToken(), $url, $data);
-
-        return $response->json();
+        return $this->post($this->configuration->getAccessToken(), $url, $data);
     }
 }

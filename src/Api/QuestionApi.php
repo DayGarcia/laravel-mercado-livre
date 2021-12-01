@@ -15,32 +15,24 @@ class QuestionApi extends Api
     public function getQuestion(string $question_id)
     {
         $url = "questions/${question_id}";
-        $response = $this->get($this->configuration->getAccessToken(), $url);
-
-        return $response->json();
+        return $this->get($this->configuration->getAccessToken(), $url);
     }
 
     public function getItemQuestions(string $item_id)
     {
         $url = "questions/search?item=${item_id}";
-        $response = $this->get($this->configuration->getAccessToken(), $url);
-
-        return $response->json();
+        return $this->get($this->configuration->getAccessToken(), $url);
     }
 
     public function createQuestion()
     {
         $url = 'questions';
-        $response = $this->post($this->configuration->getAccessToken(), $url);
-
-        return $response->json();
+        return $this->post($this->configuration->getAccessToken(), $url);
     }
 
     public function getQuestions()
     {
         $url = 'my/received_questions/search';
-        $response = $this->get($this->configuration->getAccessToken(), $url);
-
-        return $response->json();
+        return $this->get($this->configuration->getAccessToken(), $url);
     }
 }

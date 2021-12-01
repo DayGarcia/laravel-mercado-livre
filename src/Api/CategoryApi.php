@@ -15,24 +15,18 @@ class CategoryApi extends Api
     public function getCategories()
     {
         $url = 'sites/' . config('mercadolivre.site_id') . '/categories';
-        $response = $this->get($this->configuration->getAccessToken(), $url);
-
-        return $response->json();
+        return $this->get($this->configuration->getAccessToken(), $url);
     }
 
     public function getCategory(String $categoryId)
     {
         $url = "categories/{$categoryId}";
-        $response = $this->get($this->configuration->getAccessToken(), $url);
-
-        return $response->json();
+        return $this->get($this->configuration->getAccessToken(), $url);
     }
 
     public function getCategoryAttributes(String $categoryId)
     {
         $url = "categories/{$categoryId}/attributes";
-        $response = $this->get($this->configuration->getAccessToken(), $url);
-
-        return $response->json();
+        return $this->get($this->configuration->getAccessToken(), $url);
     }
 }

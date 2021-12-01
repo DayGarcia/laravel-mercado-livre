@@ -15,7 +15,7 @@ class ShipmentApi extends Api
     public function getShipment(string $shipment_id)
     {
         $url = "shipments/${shipment_id}";
-        $response = $this->get($this->configuration->getAccessToken(), $url);
+        return $this->get($this->configuration->getAccessToken(), $url);
 
         return $response->json();
     }

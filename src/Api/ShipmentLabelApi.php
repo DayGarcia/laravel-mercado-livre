@@ -16,8 +16,6 @@ class ShipmentLabelApi extends Api
     {
         $format = (!empty($format) && $format == 'pdf') ? 'savePdf=Y' : 'response_type=zpl2';
         $url = "shipment_labels?shipment_ids=${shipment_id}&{$format}";
-        $response = $this->get($this->configuration->getAccessToken(), $url);
-
-        return $response->json();
+        return $this->get($this->configuration->getAccessToken(), $url);
     }
 }
