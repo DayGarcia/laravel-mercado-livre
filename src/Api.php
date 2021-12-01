@@ -16,6 +16,6 @@ class Api
 
     public function post($url, $params = [])
     {
-        $response = Http::post($url, $params);
+        return Http::post($url, $params)->object();
     }
 }

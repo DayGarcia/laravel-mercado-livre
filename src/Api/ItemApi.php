@@ -39,7 +39,8 @@ class ItemApi extends Api
     public function createItem(array $item)
     {
         $url = 'items';
-        return $this->post($this->configuration->getAccessToken(), $url, $item);
+
+        $response = $this->post($this->configuration->getAccessToken(), $url, $item);
 
         $this->createItemDescription($response->id, $item['description']);
 
