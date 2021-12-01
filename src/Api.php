@@ -10,12 +10,12 @@ class Api
 {
     private const url = 'https://api.mercadolibre.com/';
 
-    public function get(String $access_token, String $url, array $params = []): stdClass
+    public function get(String $access_token, String $url)
     {
-        return Http::withToken($access_token)->get(self::url . $url, $params)->object();
+        return Http::withToken($access_token)->get(self::url . $url)->object();
     }
 
-    public function post($url, $params = []): stdClass
+    public function post($url, $params = [])
     {
         return Http::post($url, $params)->object();
     }
