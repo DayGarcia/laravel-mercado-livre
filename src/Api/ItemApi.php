@@ -12,7 +12,7 @@ class ItemApi extends Api
         $this->configuration = $configuration;
     }
 
-    public function getItems(array $ids, array $attributes = [])
+    public function getItems(array|string $ids, array $attributes = [])
     {
         $ids = is_array($ids) ? implode(',', $ids) : $ids;
         $url = 'items?ids=' .  $ids . '&attributes=' . implode(',', $attributes);
