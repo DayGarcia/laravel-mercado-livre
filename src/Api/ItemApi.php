@@ -14,7 +14,8 @@ class ItemApi extends Api
 
     public function getItems(array $ids, array $attributes = [])
     {
-        $url = 'items/ids?=' . implode(',', $ids) . '&attributes=' . implode(',', $attributes);
+        $ids = is_array($ids) ? implode(',', $ids) : $ids;
+        $url = 'items?ids=' .  $ids . '&attributes=' . implode(',', $attributes);
         return $this->get($this->configuration->getAccessToken(), $url);
     }
 
