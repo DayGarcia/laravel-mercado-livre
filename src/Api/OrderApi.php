@@ -14,7 +14,9 @@ class OrderApi extends Api
 
     public function getOrders(string $seller_id = '', string $buyer_id = '')
     {
-        $url = "orders/search?seller=${seller_id}&buyer=${buyer_id}";
+        !empty($buyer_id) ? $buyer_id = "&buyer={$buyer_id}" : $buyer_id = '';
+
+        $url = "orders/search?seller={$seller_id}{$buyer_id}";
         return $this->get($this->configuration->getAccessToken(), $url);
     }
 
