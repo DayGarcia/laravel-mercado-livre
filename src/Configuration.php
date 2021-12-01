@@ -19,16 +19,17 @@ class Configuration
     private $user_id;
     private $errors = [];
 
-    public function __construct(String $code, String $client_id, String $secret, String $redirect_uri, String $type, String $refresh_token = null)
+    public function __construct(array $config)
     {
-        $this->code = $code;
-        $this->client_id = $client_id;
-        $this->secret = $secret;
-        $this->redirect_uri = $redirect_uri;
-        $this->refresh_token = $refresh_token;
-        $this->type = $type;
+        $this->code = $config['code'] ?? null;
+        $this->client_id = $config['client_id'] ?? null;
+        $this->secret = $config['secret'] ?? null;
+        $this->access_token = $config['access_token'] ?? null;
+        $this->refresh_token = $config['refresh_token'] ?? null;
+        $this->type = $config['type'] ?? null;
+        $this->redirect_uri = $config['redirect_uri'] ?? null;
 
-        $this->authorize();
+        !empty($this->access_token) ? $this->setAccessToken($this->access_token) : $this->authorize();
     }
 
     public function authorize(): void
