@@ -61,7 +61,7 @@ $config = new Configuration([
 
 ```
 
-#Example
+## Example
 
 ```php
 <?php
