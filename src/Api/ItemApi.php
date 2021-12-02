@@ -48,7 +48,7 @@ class ItemApi extends Api
         return $response;
     }
 
-    public function createItemDescription(String $itemId, array $description)
+    public function createItemDescription(String $itemId, string $description)
     {
         $url = "items/${itemId}/description";
         return $this->post($this->configuration->getAccessToken(), $url, ['plain_text' => $description]);
