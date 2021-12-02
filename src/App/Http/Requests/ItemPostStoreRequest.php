@@ -26,6 +26,7 @@ class ItemPostStoreRequest extends FormRequest
         return [
             'title'                     => 'required|string',
             'category_id'               => 'required|string',
+            'description'               => 'nullable|string',
             'price'                     => 'required|numeric',
             'currency_id'               => 'required|string',
             'available_quantity'        => 'required|integer',
