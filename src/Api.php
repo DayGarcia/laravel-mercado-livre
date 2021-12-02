@@ -15,8 +15,8 @@ class Api
         return Http::withToken($access_token)->get(self::url . $url)->object();
     }
 
-    public function post($url, $params = [])
+    public function post($url, $data)
     {
-        return Http::post($url, $params)->object();
+        return Http::post($url, $data)->object();
     }
 }
