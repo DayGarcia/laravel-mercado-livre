@@ -32,6 +32,10 @@ class MercadoLivreServiceProvider extends ServiceProvider
             __DIR__ . '/config/mercadolivre.php' => config_path('mercadolivre.php'),
         ]);
 
+        $this->publishes([
+            __DIR__ . '/app/Http/Requests/' => app_path('Http/Requests/LaravelMercadoLivre/'),
+        ]);
+
         $this->client_id = config('mercadolivre.client_id');
         $this->client_secret = config('mercadolivre.client_secret');
         $this->urls = config('mercadolivre.urls');
