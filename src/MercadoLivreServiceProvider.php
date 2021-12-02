@@ -4,6 +4,7 @@ namespace DayGarcia\LaravelMercadoLivre;
 
 use Illuminate\Support\ServiceProvider;
 use DayGarcia\LaravelMercadoLivre\MercadoLivre;
+use Illuminate\Support\Facades\Storage;
 
 class MercadoLivreServiceProvider extends ServiceProvider
 {
@@ -31,7 +32,10 @@ class MercadoLivreServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/config/mercadolivre.php' => config_path('mercadolivre.php'),
         ]);
-
+        // check if the App/Http/Requests/LaravelMercadoLivreExists directory exists
+        if (!file_exists(app_path('Http/Requests/LaravelMercadoLivre/'))) {
+            mkdir(app_path('Http/Requests/LaravelMercadoLivre/'), 0755, true);
+        }
         $this->publishes([
             __DIR__ . '/app/Http/Requests/' => app_path('Http/Requests/LaravelMercadoLivre/'),
         ]);
