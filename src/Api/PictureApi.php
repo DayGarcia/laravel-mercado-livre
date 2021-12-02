@@ -5,16 +5,16 @@ namespace DayGarcia\LaravelMercadoLivre\Api;
 use DayGarcia\LaravelMercadoLivre\Api;
 use DayGarcia\LaravelMercadoLivre\Configuration;
 
-class ImageApi extends Api
+class PictureApi extends Api
 {
     public function __construct(Configuration $configuration)
     {
         $this->configuration = $configuration;
     }
 
-    public function uploadImage($file)
+    public function uploadPicture($file)
     {
         $url = 'pictures';
-        return $this->post($this->configuration->getAccessToken(), $url, $file);
+        return $this->upload($this->configuration->getAccessToken(), $url, $file);
     }
 }
