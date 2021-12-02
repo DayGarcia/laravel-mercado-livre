@@ -67,9 +67,10 @@ class Configuration
         if (isset($response->refresh_token)) {
             $this->setAccessToken($response->access_token);
             $this->setRefreshToken($response->refresh_token);
+            isset($response->user_id) ? $this->setUserId($response->user_id) : null;
         } else if (isset($response->access_token)) {
             $this->setAccessToken($response->access_token);
-            $this->setUserId($response->user_id);
+            isset($response->user_id) ? $this->setUserId($response->user_id) : null;
         } else {
             $this->setErrors([$response->error, $response->message]);
             $this->setErrorCode($response->status);
