@@ -25,19 +25,19 @@ class ItemPostStoreRequest extends FormRequest
     {
         return [
             'title'                     => 'required|string',
-            'category_id'               => 'required|integer',
+            'category_id'               => 'required|string',
             'price'                     => 'required|numeric',
             'currency_id'               => 'required|string',
             'available_quantity'        => 'required|integer',
             'buying_mode'               => 'required|string',
             'listing_type_id'           => 'required|string',
             'condition'                 => 'required|string',
-            'sale_terms'                => 'required|array:id,value_name',
+            'sale_terms.*'              => 'required|array:id,value_name',
             'sale_terms.*.id'           => 'required|string',
             'sale_terms.*.value_name'   => 'required|string',
-            'pictures'                  => 'required|array:source',
+            'pictures.*'                => 'required|array:source',
             'pictures.*.source'         => 'required|string',
-            'attributes'                => 'required|array:id,value_name',
+            'attributes.*'              => 'required|array:id,value_name',
             'attributes.*.id'           => 'required|string',
             'attributes.*.value_name'   => 'required|string',
         ];
