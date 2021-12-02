@@ -24,10 +24,10 @@ class QuestionApi extends Api
         return $this->get($this->configuration->getAccessToken(), $url);
     }
 
-    public function createQuestion()
+    public function createQuestion($question)
     {
         $url = 'questions';
-        return $this->post($this->configuration->getAccessToken(), $url);
+        return $this->post($this->configuration->getAccessToken(), $url, $question);
     }
 
     public function getQuestions()
