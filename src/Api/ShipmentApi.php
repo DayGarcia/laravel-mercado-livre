@@ -16,7 +16,5 @@ class ShipmentApi extends Api
     {
         $url = "shipments/${shipment_id}";
         return $this->get($this->configuration->getAccessToken(), $url);
-
-        return $response->json();
     }
 }
