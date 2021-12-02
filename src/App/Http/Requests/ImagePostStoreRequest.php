@@ -24,7 +24,6 @@ class ImagePostStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            // validate if image is a jpg/jpee/png/ file with 10MB size
             'image' => 'required|image|mimes:jpeg,png,jpg|max:10240',
         ];
     }
