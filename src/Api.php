@@ -3,6 +3,7 @@
 namespace DayGarcia\LaravelMercadoLivre;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Http;
 use stdClass;
 
@@ -15,12 +16,12 @@ class Api
         return Http::withToken($access_token)->get(self::url . $url)->object();
     }
 
-    public function post(string $access_token, $url, $data)
+    public function post(string $access_token, string $url, $data)
     {
         return Http::withToken($access_token)->post(self::url . $url, $data)->object();
     }
 
-    public function put(string $access_token, $url, $data)
+    public function put(string $access_token, string $url, $data)
     {
         return Http::withToken($access_token)->put(self::url . $url, $data)->object();
     }
@@ -30,11 +31,12 @@ class Api
         return Http::withToken($access_token)->delete(self::url . $url)->object();
     }
 
-    public function upload(string $access_token, $url, $file)
+    public function upload(string $access_token, string $url, UploadedFile $file)
     {
         return Http::withToken($access_token)->attach(
-            'attachment',
+            'file',
             file_get_contents($file),
+            $file->getClientOriginalName()
         )->post(self::url . $url)->object();
     }
 }
