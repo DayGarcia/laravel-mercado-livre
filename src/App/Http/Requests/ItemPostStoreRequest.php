@@ -41,6 +41,22 @@ class ItemPostStoreRequest extends FormRequest
             'attributes.*'              => 'required|array:id,value_name',
             'attributes.*.id'           => 'required|string',
             'attributes.*.value_name'   => 'required|string',
+            'variations.*'              => 'nullable|array:attribute_combinations,price,available_quantity,attributes,sold_quantity,picture_ids',
+
+            'variations.*.attribute_combinations.*'             => 'nullable|array:name,value_id,value_name',
+            'variations.*.attribute_combinations.*.name'        => 'nullable|string',
+            'variations.*.attribute_combinations.*.value_id'    => 'nullable|string',
+            'variations.*.attribute_combinations.*.value_name'  => 'nullable|string',
+
+            'variations.*.price'                                => 'nullable|numeric',
+            'variations.*.available_quantity'                   => 'nullable|integer',
+            'variations.*.attributes.*'                         => 'nullable|array:id,value_name',
+            'variations.*.attributes.*.id'                      => 'nullable|string',
+            'variations.*.attributes.*.value_name'              => 'nullable|string',
+
+            'variations.*.sold_quantity'                        => 'nullable|integer',
+            'variations.*.picture_ids.*'                        => 'nullable|string',
+
         ];
     }
 }
