@@ -39,4 +39,11 @@ class Api
             $file->getClientOriginalName()
         )->post(self::url . $url)->object();
     }
+
+    public function download(string $access_token, string $url)
+    {
+        return Http::withToken($access_token)->withHeaders([
+            'Content-Type' => 'text/plain',
+        ])->get(self::url . $url)->body();
+    }
 }
