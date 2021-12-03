@@ -5,7 +5,7 @@ namespace DayGarcia\LaravelMercadoLivre\Api;
 use DayGarcia\LaravelMercadoLivre\Api;
 use DayGarcia\LaravelMercadoLivre\Configuration;
 
-class CategoryApi extends Api
+class InvoiceApi extends Api
 {
     public function __construct(Configuration $configuration)
     {
