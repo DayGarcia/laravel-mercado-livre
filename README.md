@@ -43,7 +43,7 @@ $config = new Configuration([
 
 The access_token returned last for 6 hours.
 
-Getter and setter methods are available for the `Configuration` class. You can directly get and set `code`, `client_id`, `secret`, `redirect_uri`, `type` and  `refresh_token`
+Getter and setter methods are available for the `Configuration` class. You can directly get and set `code`, `client_id`, `secret`, `redirect_uri`, `type` and `refresh_token`
 
 Alternatively, if you are managing your token by yourself, you dont need request a new token every single API call. You can just pass the token as a value in `Configuration` instance:
 
