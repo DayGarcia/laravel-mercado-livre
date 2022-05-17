@@ -97,3 +97,6 @@ public function index(Request $request)
 ##### The Authorization URLs (set the correct country domain): https://auth.mercadolibre.{country_domain}
 
 ##### Don’t forget to check out mercado livre developer website [developer site](https://developers.mercadolibre.com/)
+
+## TODO
+- [ ] Improve error handling
